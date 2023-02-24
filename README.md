@@ -54,7 +54,7 @@ Tr<-d$tr #null, 大文字と小文字は区別される
   
 ## クラスの確認
 ```R  
-class(d$tr)  
+class(d$Tr)  
 class(d$ShootDW)  
 ```  
 numeric -> 数値，character -> 文字列，factor -> ファクターなど
@@ -125,6 +125,8 @@ result<-aov(ShootDW~Rep+Tr+G+Error(Rep/(Tr*G))+G*Tr, d)
 summary(result)  
 ```  
 
+## 参考図
+![試験区](ex.jpg)
 
 ## TukeyHSDによる多重比較  
 ```R  
@@ -174,7 +176,7 @@ summary(result)
 本来は多重共線性を確認した方が良い
 ```R  
 d4<-read.csv("data.csv")
-sd4<-d4[,2:11]  
+sd4<-d4[,2:12]  
 Pr1<-prcomp (sd4)  
 summary(Pr1)  
 biplot(Pr1)
